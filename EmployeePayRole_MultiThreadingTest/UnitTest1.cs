@@ -1,10 +1,13 @@
-﻿using EmployeePayRoles_MultiThreading;
+using EmployeePayRoles_MultiThreading;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EmployeePayRole_MuktiThreading
+namespace EmployeePayRole_MultiThreadingTest
 {
-    class Program
+    [TestClass]
+    public class UnitTest1
     {
-        public static void Main(string[] args)
+        [TestMethod]
+        public void TestMethod1()
         {
             Console.WriteLine("Employee pay role program running using multi threading ");
             List<Employeecs> employee = new List<Employeecs>();
@@ -14,7 +17,6 @@ namespace EmployeePayRole_MuktiThreading
             employee.Add(new Employeecs(1, "Aiza", 5000052, "Female"));
             employee.Add(new Employeecs(1, "Alisha", 199999, "Female"));
 
-            //Uc1 Without Thread
             EmployeeOperation employeeOperation = new EmployeeOperation();
             DateTime starttime = DateTime.Now;
             employeeOperation.addEmployeeToPayRole(employee);
