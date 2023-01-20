@@ -22,6 +22,13 @@ namespace EmployeePayRole_MultiThreadingTest
             employeeOperation.addEmployeeToPayRole(employee);
             DateTime endtime = DateTime.Now;
             Console.WriteLine("Duration without threading is " + (endtime - starttime));
+
+            Console.WriteLine(" With threading ");
+            DateTime starttimeThread = DateTime.Now;
+            employeeOperation.addEmployeeToPayRole_WithThread(employee);
+            DateTime endtimeThread = DateTime.Now;
+            Console.WriteLine("Duration with threading is " + (endtimeThread - starttimeThread));
+
         }
     }
 }

@@ -26,5 +26,23 @@ namespace EmployeePayRoles_MultiThreading
         {
             employee.Add(emp);
         }
+        /// <summary>
+        /// Uc 2 With Thread
+        /// </summary>
+        /// <param name="employeeList"></param>
+        public void addEmployeeToPayRole_WithThread(List<Employeecs> employeeList)
+        {
+            foreach (var emp in employeeList)
+            {
+                Task thread = new Task(() =>
+                {
+                    Console.WriteLine(" Employee being added " + emp.Name);
+                    this.addEmployeeToPayRole(emp);
+                    Console.WriteLine("Employee added " + emp.Name);
+                });
+                thread.Start();
+            }
+            Console.WriteLine(this.employee.Count);
+        }
     }
 }
