@@ -21,4 +21,3 @@ namespace EmployeePayRoles_MultiThreading
         }
     }
 }
-
